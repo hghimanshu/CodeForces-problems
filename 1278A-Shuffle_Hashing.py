@@ -35,11 +35,12 @@ def checkingHash(string, given_hash):
 
 if __name__ == "__main__":
     
+    inputs = {}
+
     t = int(input())
-    # t = 1
     for i in range(t):
         s = str(input())
         h = str(input())
-        # s = 'twenty'
-        # h = 'ten'
-        checkingHash(s,h)
+        inputs[s] = h
+    for i in inputs.keys():
+        checkingHash(i,inputs[i])
