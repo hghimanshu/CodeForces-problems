@@ -20,6 +20,8 @@ def traversing(given_hash, map_, string):
 
                     if copy_map[given_hash[i]] == 0:
                         del copy_map[given_hash[i]]
+                else:
+                    break
 
                 if list(copy_map.keys()) == []:
                     return "YES"
@@ -31,16 +33,17 @@ def traversing(given_hash, map_, string):
 def checkingHash(string, given_hash):
     map_ = countForEachChar(string)
     answer = traversing(given_hash, map_, string)
-    print(answer)
+    return answer
 
 if __name__ == "__main__":
     
-    inputs = {}
-
+    outputs = []
     t = int(input())
     for i in range(t):
         s = str(input())
         h = str(input())
-        inputs[s] = h
-    for i in inputs.keys():
-        checkingHash(i,inputs[i])
+        ans = checkingHash(s,h)
+        outputs.append(ans)
+
+    for i in outputs:
+        print(i)
