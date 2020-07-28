@@ -129,24 +129,24 @@ class TreeNode:
 
 
 
-bst1 = BST()
-print(bst1)
-nodes_to_insert = [8,4,5,6,7,3,2,1,15,11,10,13,12,14,17,16,18]
-# nodes_to_insert = [8,5,6,4,3,2,1]
-for node in nodes_to_insert:
-    bst1.put(node)
-# bst1.put(2)
-# print(bst1.root.key)
-# print(bst1.root.rig1ht_child.key)
-# print(bst1.root.left_child.key)
+# bst1 = BST()
+# print(bst1)
+# nodes_to_insert = [8,4,5,6,7,3,2,1,15,11,10,13,12,14,17,16,18]
+# # nodes_to_insert = [8,5,6,4,3,2,1]
+# for node in nodes_to_insert:
+#     bst1.put(node)
+# # bst1.put(2)
+# # print(bst1.root.key)
+# # print(bst1.root.rig1ht_child.key)
+# # print(bst1.root.left_child.key)
 
-# bst1.inorder(bst1.root)
+# # bst1.inorder(bst1.root)
 
-# print("going to delete 17")
-# bst1.delete(None,bst1.root,17)
+# # print("going to delete 17")
+# # bst1.delete(None,bst1.root,17)
 
 
-bst1.postorder(bst1.root)
+# bst1.postorder(bst1.root)
 
 
 # dummy_node = None
