@@ -28,12 +28,16 @@ def checkForLCA(key1,key2,root):
     print(key1visited)
     print("key 2 visited nodes are:::")
     print(key2visited)
-    lca = 999999
-    for visitedNode in key1visited:
-        if visitedNode in key2visited:
-            if visitedNode < lca:
-                lca = visitedNode
-    return lca
+    lca = 999999    
+
+    i=0
+    while(i < len(key1visited) and i< len(key2visited)):
+        if key1visited[i]!=key2visited[i]:
+            break
+        i+=1
+
+    return key1visited[i-1]
+    
 
 
 
