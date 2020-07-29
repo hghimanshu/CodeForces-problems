@@ -28,6 +28,19 @@ class LinkedList:
         temp.set_next(self.head)
         self.head = temp
 
+    def add_end(self,item):
+        temp = Node(item)
+        if not self.head:
+            self.head = temp
+        else:
+            current = self.head
+            while current.get_next() !=None:
+                current = current.get_next()
+            current.set_next(temp)
+
+
+
+
     def size(self):
         current = self.head
         size = 0
@@ -68,15 +81,25 @@ class LinkedList:
 ll = LinkedList()
 # print(ll.head)
 
-ll.add(1)
-ll.add(2)
-ll.add(3)
-ll.add(4)
-ll.add(5)
-ll.add(6)
-ll.add(7)
-ll.add(8)
+# ll.add(1)
+# ll.add(2)
+# ll.add(3)
+# ll.add(4)
+# ll.add(5)
+# ll.add(6)
+# ll.add(7)
+# ll.add(8)
 
+ll.add_end(1)
+ll.add_end(2)
+ll.add_end(3)
+ll.add_end(4)
+ll.add_end(5)
+ll.add_end(6)
+ll.add_end(7)
+ll.add_end(8)
+
+ll.traverse()
 # print(ll.he
 
 rest = ll.reverseList(ll.head)
@@ -84,3 +107,5 @@ ll.head = rest
 
 print("Linked list after reversal")
 ll.traverse()
+
+
