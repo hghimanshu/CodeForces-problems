@@ -1,16 +1,20 @@
 class queueWithStack:
     def __init__(self):
-        self.stack = []
+        self.enq, self.deq = [], []
     
 
     def enqueue(self, x):
-        self.stack.append(x)
+        self.enq.append(x)
     
     def dequeue(self):
-        self.stack.pop(0)
+        if not self.deq:
+            for _ in range(len(self.enq)):
+                self.deq.append(self.enq.pop())
+        return self.deq.pop()
+                    
     
     def getElements(self):
-        print(self.stack)
+        print(self.deq[::-1])
 
 
 obj = queueWithStack()
