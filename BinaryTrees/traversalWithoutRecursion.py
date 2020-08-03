@@ -25,18 +25,14 @@ class Solution:
 
     def preoderWithoutRecursion(self, root):
         ### Root ---> Left ---> Right
-        s, result = [], []
+        path, result = [root], []
 
-        while s or root:
-            if root:
-                result.append(root.data)
+        while path:
+            curr = path.pop()
+            if curr:
+                result.append(curr.data)
+                path += [curr.right, curr.left]
 
-                s.append(root)
-
-                root = root.left
-            else:
-                root = s.pop()
-                root = root.right
         return result
 
     # def postorderWithoutRecursion(self, root):
