@@ -1,36 +1,21 @@
 def sortArr(arr, n):
-    count_0, count_1, count_2 = 0, 0, 0
-    for i in arr:
-        if i == 0:
-            count_0 +=1
-        elif i == 1:
-            count_1 +=1
-        else:
-            count_2 +=1
-    
-    i = 0
+    count_each_element = [(i, arr.count(i)) for i in arr]
+    count_each_element = list(set(count_each_element))
+    count_each_element = sorted(count_each_element, key= lambda x: x[0])
 
+    j = 0
 
-    while count_0 > 0:
-        arr[i] = 0
-        i+=1
-        count_0 -=1
-    
-    while count_1 > 0:
-        arr[i] = 1
-        i+=1
-        count_1 -=1
-    
-    while count_2 > 0:
-        arr[i] = 2
-        i+=1
-        count_2 -=1
-    
+    for i in range(len(count_each_element)):
+        current_val, current_val_count = count_each_element[i]
+        
+        while current_val_count > 0:
+            arr[j] = current_val
+            j +=1
+            current_val_count -=1
 
     return arr
 
 
-arr = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1] 
-n = len(arr) 
-  
-print(sortArr(arr, n)) 
+arr = [0, 1, 1, 3, 3, 2, 1, 2, 1, 0, 0, 1] 
+pivot = 2
+print(sortArr(arr, pivot)) 
