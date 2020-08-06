@@ -10,6 +10,7 @@ def rotateImage(arr):
         for j in range(n):
             ans.append(arr[i + row][it])
             row -=1
+        ans = ans[-it:] + ans[:-it]
         it +=1
         result.append(ans)
     
