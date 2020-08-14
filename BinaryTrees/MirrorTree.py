@@ -8,10 +8,10 @@ class Tree:
 def generateMirrorTree(root1, root2):
     if root1:
         if root1.right:
-            root2.left = Node(root1.right.data)
+            root2.left = Tree(root1.right.data)
         
         if root1.left:
-            root2.right = Node(root1.left.data)
+            root2.right = Tree(root1.left.data)
         
         generateMirrorTree(root1.left, root2.right)
         generateMirrorTree(root1.right, root2.left)
