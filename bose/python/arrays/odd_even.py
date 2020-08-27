@@ -14,5 +14,6 @@ def reorder_odd_even(arr):
 
 
 arr = [2,4,6,8,5,3,9,11]
-
+arr.reverse()
+print("arr is:: ",arr)
 print(reorder_odd_even(arr))
