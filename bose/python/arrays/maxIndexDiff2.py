@@ -41,4 +41,4 @@ if __name__ == "__main__":
     # arr =[34,8,10,3,2,80,30,33,1]
     arr = [70, 83, 82, 39, 81]
     print(maxIndexDiff(arr,len(arr)))
-    print(time.time()-start)
+    print(time.time()-start)    
