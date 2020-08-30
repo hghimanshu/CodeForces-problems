@@ -18,6 +18,10 @@ class LinkedList:
     def __init__(self):
         self.head = None
     
+
+    def getHeadNode(self):
+        return self.head
+
     def __len__(self):
         count = 0
         temp = self.head
