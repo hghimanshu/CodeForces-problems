@@ -2,110 +2,64 @@ class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
-    
-    def get_data(self):
+
+    def getNext(self):
+        returnValue = self.next if self.next is not None else None
+        return returnValue
+
+    def getData(self):
         return self.data
 
-    def set_data(self,new_data):
-        self.data = new_data
+    def setNext(self,next):
+        self.next = next
     
-    def set_next(self,new_next):
-        self.next = new_next
-
-    def get_next(self):
-        return self.next
-
 
 class LinkedList:
     def __init__(self):
         self.head = None
     
-    def is_empty(self):
-        return self.head == None
 
-    def add(self,item):
-        temp = Node(item)
-        temp.set_next(self.head)
+    def getHeadNode(self):
+        return self.head
+
+    def __len__(self):
+        count = 0
+        temp = self.head
+        while temp:
+            count+=1
+            temp = temp.getNext()
+        return count
+
+    def addFront(self,value):
+        temp = Node(value)
+        temp.next = self.head
         self.head = temp
-
-    def add_end(self,item):
-        temp = Node(item)
+    
+    def addEnd(self,value):
         if not self.head:
-            self.head = temp
+            self.head = Node(value)
         else:
-            current = self.head
-            while current.get_next() !=None:
-                current = current.get_next()
-            current.set_next(temp)
-
-
-
-
-    def size(self):
-        current = self.head
-        size = 0
-        while current!=None:
-            size+=1
-            current = current.get_next()
-        return size
+            temp = self.head
+            while temp.getNext():
+                temp = temp.getNext()
+            newNode = Node(value)
+            temp.setNext(newNode)
 
     def traverse(self):
-        current = self.head
-        while current!=None:
-            print(current.get_data())
-            current = current.get_next()
+        temp = self.head
+        while temp:
+            print(temp.getData())
+            temp = temp.getNext()
 
-    def delete_value(self,value):
-        if self.head.get_data() == value:
-            self.head = self.head.get_next()
-        else:
-            current = self.head
-            while current.get_next().get_data() !=value:
-                current = current.get_next()
-            tempNode = current.get_next()
-            current.set_next(current.get_next().get_next())
+    
 
-    def reverseList(self,head):
-        if head==None or head.get_next() ==None:
-            return head
-        rest = self.reverseList(head.get_next())
-        head.get_next().set_next(head)
-        head.set_next(None)
-        return rest
-
-
-
-    # temp = Node(89)
-# print(temp.get_data())
-
-ll = LinkedList()
-# print(ll.head)
-
-# ll.add(1)
-# ll.add(2)
-# ll.add(3)
-# ll.add(4)
-# ll.add(5)
-# ll.add(6)
-# ll.add(7)
-# ll.add(8)
-
-ll.add_end(1)
-ll.add_end(2)
-ll.add_end(3)
-ll.add_end(4)
-ll.add_end(5)
-ll.add_end(6)
-ll.add_end(7)
-ll.add_end(8)
-
-ll.traverse()
-# print(ll.he
-
-rest = ll.reverseList(ll.head)
-ll.head = rest
-
-print("Linked list after reversal")
-ll.traverse()
-
-
+if __name__ == "__main__":
+    ll = LinkedList()
+    ll.addEnd(1)
+    ll.addEnd(2)
+    ll.addEnd(3)
+    ll.addEnd(4)
+    ll.addEnd(5)
+    ll.addEnd(6)
+    print("Length of the linked list is::: ",len(ll))
+    ll.traverse()
