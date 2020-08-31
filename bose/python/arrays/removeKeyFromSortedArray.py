@@ -6,6 +6,7 @@ def removeKey(a,key):
     wi=0
     while i<len(a):
         if a[wi]==key:
+            a[wi]=a[i]
 
         else:
             w+1
