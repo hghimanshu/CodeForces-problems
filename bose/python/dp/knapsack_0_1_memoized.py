@@ -25,17 +25,26 @@ while i<=70:
 W = 1000
 
 
+t = [[-1]*(W+1)]*(len(wt)+1)
+
 def knapsack(wt,val,W,N):
     if N==0 or W==0:
         return 0
+    # print("N is::: ",N)
+    # print("W is::: ",W)
+    if t[N][W]!=-1:
+        return t[N][W] 
     if wt[N-1] <= W:
-        return max(val[N-1] + knapsack(wt,val,W - wt[N-1],N-1),
+        t[N][W] =  max(val[N-1] + knapsack(wt,val,W - wt[N-1],N-1),
                     knapsack(wt,val,W,N-1))
+        return t[N][W]
+
     elif wt[N-1] > W:
-        return knapsack(wt,val,W,N-1)
+        t[N][W] = knapsack(wt,val,W,N-1)
+        return t[N][W]
 
 if __name__ == "__main__":
-    
+    # print(t)
     start_time = time.time()
     print(knapsack(wt,val,W,len(wt)-1))
     end_time = time.time() - start_time
