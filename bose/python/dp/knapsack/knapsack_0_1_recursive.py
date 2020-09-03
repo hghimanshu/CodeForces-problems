@@ -36,6 +36,12 @@ def knapsack(wt,val,W,N):
 
 if __name__ == "__main__":
     
+
+
+    wt = [1,3,4,5]
+    val = [1,4,5,7]
+
+    W = 7
     start_time = time.time()
     print(knapsack(wt,val,W,len(wt)-1))
     end_time = time.time() - start_time
