@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self,data):
+    def __init__(self,data=None):
         self.data = data
         self.next = None
 
@@ -51,7 +51,13 @@ class LinkedList:
             print(temp.getData())
             temp = temp.getNext()
 
-    
+    def traverseWithHead(self,headNode):
+        print("Traversing with head as input")
+        temp = headNode
+        while temp and temp.getData():
+            print(temp.getData())
+            temp = temp.getNext()
+
 
 if __name__ == "__main__":
     ll = LinkedList()
