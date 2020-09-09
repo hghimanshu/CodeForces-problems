@@ -21,7 +21,7 @@ def cyclic_right_shift(head,k):
     new_head = new_tail.next
     new_tail.setNext(None)
     return new_head
-
+ 
 
 
 if __name__ == "__main__":
@@ -33,4 +33,5 @@ if __name__ == "__main__":
     ll1.addEnd(12)
     k=3
     head = cyclic_right_shift(ll1.getHeadNode(),k)
-    ll1.traverseWithHead(head)
+    if head:
+        ll1.traverseWithHead(head)
