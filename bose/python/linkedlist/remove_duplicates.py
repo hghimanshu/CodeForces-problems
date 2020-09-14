@@ -25,6 +25,7 @@ if __name__ == "__main__":
     ll1.addEnd(3)
     ll1.addEnd(11)
     ll1.addEnd(11)
+    ll1.addEnd(14)
     head = removeDuplicates(ll1.getHeadNode())
     if head:
         ll1.traverseWithHead(head)

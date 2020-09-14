@@ -2,13 +2,26 @@ from LinkedList import LinkedList
 from LinkedList import Node
 
 
-def reverse_linked_list(node):
-    if node is None or node.getNext() is None:
-        return node
-    new_node = reverse_linked_list(node.getNext())
-    node.getNext().setNext(node)
-    node.setNext(None)
-    return new_node
+
+def reverse_linked_list(head):
+    current = head
+    prev = None
+    # prev.next = current
+    while current:
+        head = head.next
+        current.next = prev
+        prev = current
+        current = head
+    return prev
+
+
+# def reverse_linked_list(node):
+#     if node is None or node.getNext() is None:
+#         return node
+#     new_node = reverse_linked_list(node.getNext())
+#     node.getNext().setNext(node)
+#     node.setNext(None)
+#     return new_node
 
 def getMid(node):
     slow = fast = node
@@ -33,7 +46,7 @@ if __name__ == "__main__":
     ll1 = LinkedList()
     ll1.addEnd(1)
     ll1.addEnd(2)
-    ll1.addEnd(2)
+    ll1.addEnd(3)
     ll1.addEnd(4)
     ll1.addEnd(3)
     ll1.addEnd(2)
