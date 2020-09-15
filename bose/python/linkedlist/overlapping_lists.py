@@ -67,5 +67,7 @@ if __name__ == "__main__":
     head1 = createOverlap(head1,head2,4)
     if(checkifOverlapExists(head1,head2)):
         print("Overlap exists")
+    else:
+        print("Overlap doesn't exist")
 
     
