@@ -25,7 +25,7 @@ def zigzag(head_node):
             if slow.data<fast.data:
                 temp = slow.data
                 slow.data = fast.data
-                fast.data = temp
+                fast.data = temp    
                 
         slow,fast = slow.next, fast.next
         count+=1
