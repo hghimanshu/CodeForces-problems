@@ -26,7 +26,7 @@ def getMaxPathSum(root,path_sum):
     return leafPresent
 
 if __name__ == "__main__":
-    bst = BST() 
+    bst = BST()  
     print(bst)
     bst.push(12)
     bst.push(8)
