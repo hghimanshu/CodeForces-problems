@@ -40,15 +40,9 @@ class Graph:
                 if visited[node]!=True: #not visited
                     visited[node] = True
                     queue.append(node)
-            print(s)
+            print(s,end=" ")
 
     
-
-    
-
-
-    
-
 if __name__ == "__main__":
 
     g= Graph()
@@ -62,4 +56,4 @@ if __name__ == "__main__":
     g.addEdge('4', '3')
     g.show_edges()
     print(g.find_path_dfs('4','1'))
-    print(g.find_path_bfs('1'))
+    g.find_path_bfs('1')
