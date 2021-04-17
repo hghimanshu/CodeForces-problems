@@ -52,4 +52,5 @@ if __name__ == '__main__':
     # g.addEdge('4', '2')
     g.addEdge('4', '0')
     det = DetectCycle()
+    print(g.graph_dict)
     print("Cycle is present:: {}".format(det.isCyclic(g.graph_dict)))
