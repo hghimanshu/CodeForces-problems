@@ -53,14 +53,10 @@ class Djiktras:
                         self.values[adjNode] = newCost
                         heappush(queue,(self.values[adjNode],adjNode))
 
-        max_delay = 0
-        for k,v in self.values.items():
-            if v==float('inf'):
-                return -1
-            if v>max_delay:
-                max_delay = v
-            
-        return max_delay
+        max_value = max(self.values.values())
+        if max_value == float("inf"):
+            return -1
+        return max_value
 
 if __name__ == "__main__":
     g = Graph()
