@@ -50,7 +50,7 @@ class Solution:
         curr_str = ""
         self.generate(open_bracket, close_bracket,curr_str,n)
 
-        return self.all_pairs
+        return self.all_pairs 
 
 if __name__ == "__main__":
     n=3
