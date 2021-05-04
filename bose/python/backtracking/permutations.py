@@ -37,7 +37,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    nums = [5,4,6,2]
+    nums = [1,2,3,4]
     sol = Solution()
     print(sol.permute(nums))
 
