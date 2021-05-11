@@ -10,13 +10,28 @@ class Solution:
 
     def getSeqDp(self,arr):
         lis = [1]*len(arr)
+        count = [1]*len(arr)
 
         for i in range(1,len(arr)):
             for j in range(0,i):
-                if arr[i] > arr[j] and lis[i] <= lis[j]:
-                    lis[i] = lis[j]+1
+                if arr[i] > arr[j]:
+                    if lis[j]+1 > lis[i]: # we are trying to check if adding another number increases the sequence length:
+                        lis[i] = lis[j]+1
+                        count[i] = count[j]
+                    elif lis[i] == lis[j]+1: # we find that even after adding a new element, the sequence length remanins the same. 
+                        count[i]+=count[j]
+
         print(lis)
-        return max(lis)
+        print(count)
+        max_val = max(lis)
+        # if max_val > 1:
+        #     max_val = max_val-1
+        
+        cnt=0
+        for i in range(0,len(lis)):
+            if lis[i] == max_val:
+                cnt+=count[i]
+        return cnt
 
     @lru_cache
     def getSeqMemo(self,idx,prev):
@@ -77,6 +92,6 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
 
-    nums = [7,7,7,7,7,7,7]
+    nums = [1,3,5,4,7]
 
     print(sol.lengthOfLIS(nums))
