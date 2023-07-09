@@ -5,6 +5,21 @@ class Solution:
         self.cache = {}
         self.min_change = float('inf')
 
+    def getChangeDp(self,sum):
+        dp = [sum+1]*(sum+1)
+
+        dp[0] = 0
+        for i in range(1,len(dp)):
+            for change in self.changes:
+                aux_val = i-change
+                if aux_val <0:
+                    continue
+                dp[i] = min(dp[aux_val]+1,dp[i])
+        
+        return dp[sum]
+
+
+
     # @lru_cache
     def getChange(self,sum):
         
@@ -32,14 +47,17 @@ class Solution:
         if amount == 0:
             return 0
         self.changes = coins
-        curr_min = float('inf')
+        # curr_min = float('inf')
 
-        for change in self.changes:
-            curr_min =min(curr_min,self.getChange(amount-change))
+        # for change in self.changes:
+        #     curr_min =min(curr_min,self.getChange(amount-change))
         
-        if curr_min==float('inf'):
+        curr_min = self.getChangeDp(amount)
+        if curr_min == amount+1:
             return -1
         return curr_min
+        
+       
     
 if __name__ == "__main__":
     coins = [2]

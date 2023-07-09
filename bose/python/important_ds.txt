@@ -1,0 +1,8 @@
+1. Arrays & string manipulation
+2. Stacks, queues, linked lists, hashmaps, trees, graphs (implementation)
+3. Tries - autocompletion problem
+4. Tree traversals: pre-order, in-order, post-order, 
+5. Depth and breadth first search (DFS, BFS)
+6. Recursion, iteration and converting one solution to the other
+7. Searching, sorting - binary search, linear search, bubble sort, merge sort, quick sort
+8. Advanced topics - topological sort, quick select, dynamic programming etc
