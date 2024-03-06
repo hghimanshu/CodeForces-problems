@@ -17,6 +17,6 @@ def maxSubArraySum(a,size):
 
 
 if __name__ == "__main__":
-    # a =[-1,-2,-3,-4]
-    a = [1,2,3,-2,5]
+    a =[-2,-1]
+    # a = [1,2,3,-2,5]
     print(maxSubArraySum(a,len(a)))
